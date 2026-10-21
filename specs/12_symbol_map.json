@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#5b554d",
+      "titleColor": "#5b554d",
+      "gridColor": "#eae3d9",
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#5b554d",
+      "titleColor": "#5b554d"
+    }
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "width": "container",
+  "height": 340,
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e5dfd4",
+        "stroke": "#fff",
+        "strokeWidth": 0.4
+      }
+    },
+    {
+      "data": {
+        "url": "data/malaysia_coffee_trade_2024.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.direction === 'Import'"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "color": "#8a5938",
+        "opacity": 0.73,
+        "stroke": "white",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude_approx",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude_approx",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "trade_value_usd_1000",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              18,
+              1500
+            ]
+          },
+          "legend": {
+            "title": "US$ thousand"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country"
+          },
+          {
+            "field": "trade_value_usd_1000",
+            "format": ",.2f"
+          }
+        ]
+      }
+    }
+  ]
+}

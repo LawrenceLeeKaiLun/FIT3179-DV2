@@ -1,0 +1,52 @@
+country,direction,trade_value_usd_1000,quantity_kg,longitude_approx,latitude_approx,unit_value_usd_per_kg
+Vietnam,Import,138511.59,31539200,106.0,16.0,4.392
+Indonesia,Import,134779.53,31035900,117.0,-2.5,4.343
+Brazil,Import,71725.62,16028500,-51,-10,4.475
+Colombia,Import,33304.02,5962740,-74,4.6,5.585
+Singapore,Import,11753.13,1230970,103.8,1.3,9.548
+India,Import,8451.78,1058250,78.9,21,7.987
+Papua New Guinea,Import,7793.53,1890480,147,-6,4.123
+Guatemala,Import,6031.07,1152850,-90.2,15.8,5.231
+Switzerland,Import,4802.06,285730,8.2,46.8,16.806
+Ethiopia,Import,4471.08,764234,40,9,5.85
+Italy,Import,3911.24,410664,12.5,42.5,9.524
+China,Import,3557.68,932819,104,35,3.814
+Germany,Import,3445.47,667959,10.4,51,5.158
+Netherlands,Import,1888.48,162515,5.3,52,11.62
+Australia,Import,1724.26,137792,134,-25,12.513
+Mexico,Import,1620.98,278214,-102,24,5.826
+El Salvador,Import,1574.44,249675,-89,13.7,6.306
+South Korea,Import,1254.23,141525,128,36,8.862
+Costa Rica,Import,1166.28,176185,-84,10,6.62
+Rwanda,Import,1109.6,169095,30,-2,6.562
+United States,Import,1103.73,77297,-98,39,14.279
+Honduras,Import,1031.76,171563,-87,15,6.014
+United Kingdom,Import,1026.52,91998,-2,54,11.158
+Uganda,Import,1001.25,257701,32,1,3.885
+Peru,Import,609.73,109105,-75,-10,5.588
+Nicaragua,Import,580.37,126007,-85,13,4.606
+Tanzania,Import,452.31,96000,35,-6,4.712
+France,Import,426.87,25728,2.2,46.2,16.592
+Kenya,Import,309.28,61001,38,0,5.07
+Japan,Import,301.07,44434,138,36,6.776
+Thailand,Import,273.87,53515,101,15,5.118
+Singapore,Export,12319.84,4230670,103.8,1.3,2.912
+Philippines,Export,6450.65,2302840,122.9,12.9,2.801
+South Korea,Export,4797.55,664350,128,36,7.221
+Thailand,Export,3851.13,1343960,101,15,2.866
+China,Export,2141.03,872948,104,35,2.453
+Indonesia,Export,1306.75,550297,117,-2.5,2.375
+Australia,Export,906.38,74076,134,-25,12.236
+Vietnam,Export,875.81,309869,106,16,2.826
+Saudi Arabia,Export,646.5,23167,45,24,27.906
+United Arab Emirates,Export,574.88,104908,54,24,5.48
+Turkey,Export,521.51,33909,35,39,15.38
+Hong Kong,Export,485.17,278834,114,22,1.74
+India,Export,400.5,47770,78.9,21,8.384
+United States,Export,290.05,40821,-98,39,7.105
+Pakistan,Export,231.56,59263,69,30,3.907
+Germany,Export,226.25,38529,10.4,51,5.872
+Oman,Export,196.93,35381,57,21,5.566
+Brunei,Export,161.45,38986,115,4.5,4.141
+Cambodia,Export,137.53,76993,105,12.5,1.786
+Colombia,Export,84.19,3246,-74,4.6,25.937

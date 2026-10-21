@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#5b554d",
+      "titleColor": "#5b554d",
+      "gridColor": "#eae3d9",
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#5b554d",
+      "titleColor": "#5b554d"
+    }
+  },
+  "width": "container",
+  "height": 270,
+  "data": {
+    "url": "data/malaysia_coffee_trade_2024.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "color": "#2e756f",
+    "opacity": 0.8,
+    "size": 100
+  },
+  "encoding": {
+    "x": {
+      "field": "quantity_kg",
+      "type": "quantitative",
+      "title": "Exported quantity (kg)"
+    },
+    "y": {
+      "field": "trade_value_usd_1000",
+      "type": "quantitative",
+      "title": "Trade value (US$ thousand)"
+    },
+    "tooltip": [
+      {
+        "field": "country"
+      },
+      {
+        "field": "trade_value_usd_1000",
+        "format": ",.2f"
+      }
+    ]
+  },
+  "transform": [
+    {
+      "filter": "datum.direction === 'Export'"
+    }
+  ]
+}

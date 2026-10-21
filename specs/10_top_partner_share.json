@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#5b554d",
+      "titleColor": "#5b554d",
+      "gridColor": "#eae3d9",
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#5b554d",
+      "titleColor": "#5b554d"
+    }
+  },
+  "width": "container",
+  "height": 330,
+  "data": {
+    "url": "data/malaysia_coffee_trade_2024.csv"
+  },
+  "mark": {
+    "type": "arc",
+    "innerRadius": 80,
+    "outerRadius": 125
+  },
+  "encoding": {
+    "theta": {
+      "field": "trade_value_usd_1000",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "scale": {
+        "scheme": "browns"
+      },
+      "legend": {
+        "orient": "bottom",
+        "columns": 3
+      }
+    },
+    "tooltip": [
+      {
+        "field": "country"
+      },
+      {
+        "field": "trade_value_usd_1000",
+        "format": ",.2f"
+      }
+    ]
+  },
+  "transform": [
+    {
+      "filter": "datum.direction === 'Import'"
+    },
+    {
+      "filter": {
+        "field": "country",
+        "oneOf": [
+          "Vietnam",
+          "Indonesia",
+          "Brazil",
+          "Colombia",
+          "Singapore"
+        ]
+      }
+    }
+  ]
+}

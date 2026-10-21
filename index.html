@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coffee | From the World to Malaysia</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="#top">
+            COFFEE<span> / DATA STORY</span>
+        </a>
+
+        <nav>
+            <a href="#world">World</a>
+            <a href="#imports">Imports</a>
+            <a href="#exports">Exports</a>
+            <a href="#methods">Sources</a>
+        </nav>
+    </header>
+
+    <main id="top">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+
+            <div class="hero-grid">
+
+                <div>
+                    <h1>
+                        From the world<br>
+                        to <em>our cup.</em>
+                    </h1>
+
+                    <p class="lead">
+                        Coffee crosses borders before it reaches Malaysia.
+                        Explore the countries we buy from, the countries
+                        we sell to, and what the trade numbers tell us.
+                    </p>
+
+                    <a class="start" href="#world">
+                        Explore the story
+                    </a>
+                </div>
+
+                <div class="hero-art">
+                    <div class="cup">
+                        <div class="coffee"></div>
+                        <div class="handle"></div>
+                    </div>
+
+                    <span class="art-label">
+                        ONE BEAN.<br>
+                        MANY JOURNEYS.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 1: WORLD -->
+        <section class="section" id="world">
+
+            <div class="section-top">
+                <span class="number">01 / THE BIG PICTURE</span>
+                <span class="section-line"></span>
+            </div>
+
+            <h2>Coffee connects <em>countries.</em></h2>
+
+            <p class="section-intro">
+                Malaysia's coffee imports come from many trading partners.
+                These maps show where our reported imports came from in 2024.
+                A trading partner is not always the country where the
+                coffee was grown.
+            </p>
+
+            <div class="stat-row">
+
+                <div class="stat">
+                    <b>US$452.0m</b>
+                    <span>Malaysia's total coffee imports, 2024</span>
+                </div>
+
+                <div class="stat">
+                    <b>US$38.9m</b>
+                    <span>Malaysia's total coffee exports, 2024</span>
+                </div>
+
+                <div class="stat">
+                    <b>60.5%</b>
+                    <span>
+                        Import value from Vietnam and Indonesia combined
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- MAP 1 -->
+            <article class="chart-card full">
+
+                <div class="chart-head">
+                    <div>
+                        <span class="tag">
+                            MAP 01 · CHOROPLETH
+                        </span>
+
+                        <h3>
+                            Where are Malaysia's import partners?
+                        </h3>
+
+                        <p>
+                            Darker countries have higher reported coffee
+                            import values. Grey countries have no value
+                            in the selected dataset.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="chart11" class="vis map"></div>
+
+                <p class="caption">
+                    Map colours show trade value, not coffee growing area.
+                    Only selected partners are mapped.
+                </p>
+
+            </article>
+
+
+            <!-- MAPS 2 AND 3 -->
+            <div class="two">
+
+                <article class="chart-card">
+
+                    <span class="tag">
+                        MAP 02 · PROPORTIONAL SYMBOL
+                    </span>
+
+                    <h3>Which partners matter most?</h3>
+
+                    <p>
+                        Bigger circles mean higher coffee import values.
+                    </p>
+
+                    <div id="chart12" class="vis map"></div>
+
+                    <p class="caption">
+                        Circle positions are approximate country reference
+                        points, not exact farms or ports.
+                    </p>
+
+                </article>
+
+
+                <article class="chart-card">
+
+                    <span class="tag">
+                        MAP 03 · FLOW MAP
+                    </span>
+
+                    <h3>How do imports reach Malaysia?</h3>
+
+                    <p>
+                        Lines link ten major reported partners to Malaysia.
+                    </p>
+
+                    <div id="chart13" class="vis map"></div>
+
+                    <p class="caption">
+                        Straight lines show trade relationships,
+                        not real shipping routes.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 2: IMPORTS -->
+        <section class="section section-warm" id="imports">
+
+            <div class="section-top">
+                <span class="number">02 / WHAT MALAYSIA BUYS</span>
+                <span class="section-line"></span>
+            </div>
+
+            <h2>
+                Our biggest suppliers are <em>close to home.</em>
+            </h2>
+
+            <p class="section-intro">
+                Vietnam and Indonesia account for most of Malaysia's
+                reported coffee imports by value. Brazil is the largest
+                partner outside Asia in this list.
+            </p>
+
+
+            <div class="two">
+
+                <!-- CHART 4 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 04 · RANKED BAR
+                    </span>
+
+                    <h3>Top import partners</h3>
+
+                    <p>Trade value in thousand US dollars.</p>
+
+                    <div id="chart01" class="vis"></div>
+
+                </article>
+
+
+                <!-- CHART 5 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 05 · QUANTITY
+                    </span>
+
+                    <h3>Value is not the same as weight</h3>
+
+                    <p>Compare the physical quantity imported.</p>
+
+                    <div id="chart06" class="vis"></div>
+
+                    <div class="insight">
+                        Vietnam and Indonesia lead in both value
+                        and reported quantity.
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="two">
+
+                <!-- CHART 6 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 06 · SCATTERPLOT
+                    </span>
+
+                    <h3>Do larger shipments cost more?</h3>
+
+                    <p>
+                        Each dot is one import partner.
+                        Hover to see the figures.
+                    </p>
+
+                    <div id="chart03" class="vis"></div>
+
+                </article>
+
+
+                <!-- CHART 7 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 07 · UNIT VALUE
+                    </span>
+
+                    <h3>
+                        Not all coffee has the same value per kg
+                    </h3>
+
+                    <p>
+                        Trade value divided by reported quantity.
+                        This is <strong>not</strong> a shop price
+                        or a quality score.
+                    </p>
+
+                    <div id="chart05" class="vis"></div>
+
+                </article>
+
+            </div>
+
+
+            <div class="two">
+
+                <!-- CHART 8 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 08 · DONUT
+                    </span>
+
+                    <h3>Who makes up the top five?</h3>
+
+                    <p>
+                        Share of the five largest import partners only,
+                        not share of all imports.
+                    </p>
+
+                    <div id="chart10" class="vis"></div>
+
+                </article>
+
+
+                <!-- CHART 9 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 09 · HISTOGRAM
+                    </span>
+
+                    <h3>
+                        Most partners have smaller trade values
+                    </h3>
+
+                    <p>
+                        How many of the listed import partners fall
+                        in each value range?
+                    </p>
+
+                    <div id="chart09" class="vis"></div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 3: EXPORTS -->
+        <section class="section" id="exports">
+
+            <div class="section-top">
+                <span class="number">03 / WHAT MALAYSIA SELLS</span>
+                <span class="section-line"></span>
+            </div>
+
+            <h2>
+                Coffee also travels <em>out of Malaysia.</em>
+            </h2>
+
+            <p class="section-intro">
+                Malaysia exports coffee products too. Singapore was
+                its largest reported export partner in 2024.
+                Imports and exports are gross trade flows, so they
+                should not be treated as local coffee production
+                or consumption.
+            </p>
+
+
+            <div class="two">
+
+                <!-- CHART 10 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 10 · EXPORT RANKING
+                    </span>
+
+                    <h3>Where does Malaysia export coffee?</h3>
+
+                    <p>
+                        Largest reported export partners by trade value.
+                    </p>
+
+                    <div id="chart02" class="vis"></div>
+
+                </article>
+
+
+                <!-- CHART 11 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 11 · SCATTERPLOT
+                    </span>
+
+                    <h3>Export value versus quantity</h3>
+
+                    <p>
+                        Each dot represents a reported export partner.
+                    </p>
+
+                    <div id="chart07" class="vis"></div>
+
+                </article>
+
+            </div>
+
+
+            <div class="two">
+
+                <!-- CHART 12 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 12 · HEATMAP
+                    </span>
+
+                    <h3>
+                        Some partners appear on both sides
+                    </h3>
+
+                    <p>
+                        Compare import and export values for selected
+                        countries. Darker cells mean higher trade value.
+                    </p>
+
+                    <div id="chart04" class="vis"></div>
+
+                </article>
+
+
+                <!-- CHART 13 -->
+                <article class="chart-card">
+
+                    <span class="tag">
+                        CHART 13 · COMPARISON
+                    </span>
+
+                    <h3>
+                        Malaysia imports much more than it exports
+                    </h3>
+
+                    <p>
+                        Totals across the selected partner records.
+                        Use the official overall totals above for
+                        the full comparison.
+                    </p>
+
+                    <div id="chart08" class="vis"></div>
+
+                    <div class="insight">
+                        Trade flows tell us where coffee products move,
+                        not how much coffee Malaysians drink.
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLOSING SECTION -->
+        <section class="closing">
+
+            <span class="number">THE TAKEAWAY</span>
+
+            <h2>
+                A cup of coffee has<br>
+                <em>a global story.</em>
+            </h2>
+
+            <p>
+                Malaysia's coffee trade is strongly connected to nearby
+                countries, especially Vietnam and Indonesia.
+                But coffee also arrives from South America, Africa
+                and Europe. The trade data shows where products
+                are bought and sold. It does not tell us where
+                every bean was grown.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 4: SOURCES -->
+        <section class="section methods" id="methods">
+
+            <div class="section-top">
+                <span class="number">04 / ABOUT THIS PROJECT</span>
+                <span class="section-line"></span>
+            </div>
+
+            <h2>Sources & <em>notes.</em></h2>
+
+            <div class="two">
+
+                <div>
+                    <h3>Where the numbers came from</h3>
+
+                    <p>
+                        World Bank WITS, using UN Comtrade, 2024.
+                        Product HS 0901: coffee whether or not roasted
+                        or decaffeinated, husks and skins, and certain
+                        coffee substitutes. The source reports values
+                        in thousands of US dollars and quantities
+                        in kilograms.
+                    </p>
+
+
+                    <p>
+                        <a href="https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Imports/partner/ALL/product/0901"
+                            target="_blank" rel="noopener">
+                            Import data
+                        </a>
+
+                        &nbsp;
+
+                        <a href="https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Exports/partner/ALL/product/0901"
+                            target="_blank" rel="noopener">
+                            Export data
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div>
+                    <h3>How to read the charts</h3>
+
+                    <p>
+                        Charts use only published country records
+                        transcribed into local CSV files.
+                        Some small partners are excluded to keep
+                        charts readable. Map coordinates are
+                        approximate reference points.
+                        The world boundary file is from world-atlas,
+                        loaded through a public CDN.
+                    </p>
+
+                    <p>
+                        All charts and maps are made using Vega-Lite.
+                        The maps and charts require an internet
+                        connection to load Vega libraries and
+                        world boundaries.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER WITH YOUR NAME -->
+            <div class="footer">
+
+                <span>COFFEE / DATA STORY</span>
+
+                <span>
+                    Created by Lawrence Lee · FIT3179 · October 2026
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
