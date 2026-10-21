@@ -2,9 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
   "config": {
-    "view": {
-      "stroke": null
-    },
+    "view": { "stroke": null },
     "axis": {
       "labelColor": "#5b554d",
       "titleColor": "#5b554d",
@@ -23,55 +21,44 @@
   },
   "width": "container",
   "height": 330,
-  "data": {
-    "url": "data/malaysia_coffee_trade_2024.csv"
-  },
-  "mark": {
-    "type": "arc",
-    "innerRadius": 80,
-    "outerRadius": 125
-  },
-  "encoding": {
-    "theta": {
-      "field": "trade_value_usd_1000",
-      "type": "quantitative"
-    },
-    "color": {
-      "field": "country",
-      "type": "nominal",
-      "scale": {
-        "scheme": "browns"
-      },
-      "legend": {
-        "orient": "bottom",
-        "columns": 3
-      }
-    },
-    "tooltip": [
-      {
-        "field": "country"
-      },
-      {
-        "field": "trade_value_usd_1000",
-        "format": ",.2f"
-      }
-    ]
-  },
-  "transform": [
+  "data": { "url": "data/malaysia_coffee_trade_2024.csv" },
+  "mark": { "type": "arc", "innerRadius": 80, "outerRadius": 125 },
+  "params": [
     {
-      "filter": "datum.direction === 'Import'"
-    },
+      "name": "partner_highlight",
+      "select": { "type": "point", "fields": ["country"] },
+      "bind": "legend"
+    }
+  ],
+  "transform": [
+    { "filter": "datum.direction === 'Import'" },
     {
       "filter": {
         "field": "country",
-        "oneOf": [
-          "Vietnam",
-          "Indonesia",
-          "Brazil",
-          "Colombia",
-          "Singapore"
-        ]
+        "oneOf": ["Vietnam", "Indonesia", "Brazil", "Colombia", "Singapore"]
       }
     }
-  ]
+  ],
+  "encoding": {
+    "theta": { "field": "trade_value_usd_1000", "type": "quantitative" },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "scale": { "scheme": "browns" },
+      "legend": { "orient": "bottom", "columns": 3 }
+    },
+    "opacity": {
+      "condition": { "param": "partner_highlight", "value": 1 },
+      "value": 0.2
+    },
+    "tooltip": [
+      { "field": "country", "type": "nominal", "title": "Import partner" },
+      {
+        "field": "trade_value_usd_1000",
+        "type": "quantitative",
+        "title": "Import value (US$ thousand)",
+        "format": ",.2f"
+      }
+    ]
+  }
 }
