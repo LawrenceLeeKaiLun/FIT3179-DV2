@@ -22,7 +22,7 @@
     }
   },
   "width": "container",
-  "height": 300,
+  "height": 350,
   "data": {
     "url": "data/malaysia_coffee_trade_2024.csv"
   },
@@ -41,15 +41,28 @@
     "x": {
       "field": "trade_value_usd_1000",
       "type": "quantitative",
-      "title": "US$ thousand"
+      "title": "Export value (US$ thousand)",
+      "axis": {
+        "format": ",.0f"
+      }
     },
     "tooltip": [
       {
-        "field": "country"
+        "field": "country",
+        "type": "nominal",
+        "title": "Export partner"
       },
       {
         "field": "trade_value_usd_1000",
+        "type": "quantitative",
+        "title": "Export value (US$ thousand)",
         "format": ",.2f"
+      },
+      {
+        "field": "quantity_kg",
+        "type": "quantitative",
+        "title": "Quantity (kg)",
+        "format": ",.0f"
       }
     ]
   },

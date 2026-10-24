@@ -2,366 +2,338 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Coffee | From the World to Malaysia</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
+    <link href="css/style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 
 <body>
-
     <header class="topbar">
         <a class="brand" href="#top">
             COFFEE<span> / DATA STORY</span>
         </a>
-
         <nav>
             <a href="#world">World</a>
+            <a href="#production">Production</a>
             <a href="#imports">Imports</a>
             <a href="#exports">Exports</a>
             <a href="#methods">Sources</a>
         </nav>
     </header>
-
     <main id="top">
-
         <!-- HERO SECTION -->
         <section class="hero">
-
             <div class="hero-grid">
-
                 <div>
                     <h1>
-                        From the world<br>
+                        From the world<br />
                         to <em>our cup.</em>
                     </h1>
-
+                    <!-- Short introduction to the coffee story -->
                     <p class="lead">
-                        Coffee crosses borders before it reaches Malaysia.
-                        Explore the countries we buy from, the countries
-                        we sell to, and what the trade numbers tell us.
+                        Where does Malaysia get its coffee from?
+                        And where does our coffee go?
+                        Explore Malaysia's coffee trade in 2024
+                        through maps, charts and data.
                     </p>
-
                     <a class="start" href="#world">
                         Explore the story
                     </a>
                 </div>
-
                 <div class="hero-art">
                     <div class="cup">
                         <div class="coffee"></div>
                         <div class="handle"></div>
                     </div>
-
                     <span class="art-label">
-                        ONE BEAN.<br>
+                        ONE BEAN.<br />
                         MANY JOURNEYS.
                     </span>
                 </div>
-
             </div>
-
         </section>
-
-
         <!-- SECTION 1: WORLD -->
         <section class="section" id="world">
-
             <div class="section-top">
                 <span class="number">01 / THE BIG PICTURE</span>
                 <span class="section-line"></span>
             </div>
-
             <h2>Coffee connects <em>countries.</em></h2>
-
             <p class="section-intro">
                 Malaysia's coffee imports come from many trading partners.
                 These maps show where our reported imports came from in 2024.
                 A trading partner is not always the country where the
                 coffee was grown.
             </p>
-
+            <p class="story-bridge">First, let's see where Malaysia's coffee trade partners are on the map.</p>
             <div class="stat-row">
-
                 <div class="stat">
                     <b>US$452.0m</b>
                     <span>Malaysia's total coffee imports, 2024</span>
                 </div>
-
                 <div class="stat">
                     <b>US$38.9m</b>
                     <span>Malaysia's total coffee exports, 2024</span>
                 </div>
-
                 <div class="stat">
                     <b>60.5%</b>
                     <span>
                         Import value from Vietnam and Indonesia combined
                     </span>
                 </div>
-
             </div>
-
             <!-- MAP 1 -->
             <article class="chart-card full">
-
                 <div class="chart-head">
                     <div>
                         <span class="tag">
                             MAP 01 · CHOROPLETH
                         </span>
-
-                        <h3>
-                            Where are Malaysia's import partners?
-                        </h3>
-
-                        <p>
-                            Darker countries have higher reported coffee
-                            import values. Grey countries have no value
-                            in the selected dataset.
-                        </p>
+                        <!-- Story title: connects this chart with the previous and next part of the dashboard. -->
+                        <h3>Our coffee connections begin around the world</h3>
+                        <p class="chart-story-intro">Before looking at the numbers, we can see where Malaysia’s selected
+                            coffee import partners are located.</p>
                     </div>
                 </div>
-
-                <div id="chart11" class="vis map"></div>
-                    <p class="reading-note">Look for: Darker countries have higher reported import values.</p>
-
+                <div class="vis map" id="chart11"></div>
+                <p class="reading-note"><strong>What the data shows: </strong>Vietnam and Indonesia stand out in
+                    Southeast Asia. Brazil is another major partner, showing that Malaysia also buys coffee from farther
+                    away.</p>
+                <p class="story-next">Next, compare the partners using circle sizes.</p>
                 <p class="caption">
                     Map colours show trade value, not coffee growing area.
                     Only selected partners are mapped.
                 </p>
-
             </article>
-
-
-            <!-- MAPS 2 AND 3 -->
-            <div class="two">
-
-                <article class="chart-card">
-
+            <!-- Maps 2 and 3: show each map on its own full-width row. -->
+            <div class="map-stack">
+                <article class="chart-card full">
                     <span class="tag">
                         MAP 02 · PROPORTIONAL SYMBOL
                     </span>
-
-                    <h3>Which partners matter most?</h3>
-
-                    <p>
-                        Bigger circles mean higher coffee import values.
-                    </p>
-
-                    <div id="chart12" class="vis map"></div>
-                    <p class="reading-note">Look for: Larger circles show partners with higher import values.</p>
-
+                    <!-- Story title: connects this chart with the previous and next part of the dashboard. -->
+                    <h3>But not every partner plays the same part</h3>
+                    <p class="chart-story-intro">The map shows where the partners are. Now the circle sizes help us see
+                        which partners have higher import values.</p>
+                    <div class="vis map" id="chart12"></div>
+                    <p class="reading-note"><strong>What the data shows: </strong>Vietnam and Indonesia have the highest
+                        import values in the selected data. Their circles should be among the largest.</p>
+                    <p class="story-next">The next map connects the selected partners to Malaysia.</p>
                     <p class="caption">
                         Circle positions are approximate country reference
                         points, not exact farms or ports.
                     </p>
-
                 </article>
-
-
-                <article class="chart-card">
-
+                <article class="chart-card full">
                     <span class="tag">
                         MAP 03 · FLOW MAP
                     </span>
-
-                    <h3>Where does Malaysia import coffee from?</h3>
-
-                    <p>
-                        Five main partners are highlighted. The other five are shown in grey.
-                    </p>
-
-                    <div id="chart13" class="vis map"></div>
-                    <p class="reading-note">Look for: The coloured curves highlight five main import partners.</p>
-
+                    <!-- Story title: connects this chart with the previous and next part of the dashboard. -->
+                    <h3>These partners all connect back to Malaysia</h3>
+                    <p class="chart-story-intro">The lines bring the countries together in one view. They show trade
+                        connections, not the routes taken by ships.</p>
+                    <div class="vis map" id="chart13"></div>
+                    <p class="reading-note"><strong>What the data shows: </strong>Vietnam and Indonesia are the two
+                        largest import partners in this dataset. The curves show trade links, not the routes taken by
+                        ships.</p>
+                    <p class="story-next">Now let's look at how much coffee Malaysia buys.</p>
                     <p class="caption">
                         Curved lines show trade relationships,
                         not real shipping routes.
                     </p>
-
                 </article>
-
             </div>
-
         </section>
-
-
-        <!-- SECTION 2: IMPORTS -->
-        <section class="section section-warm" id="imports">
-
+        <!-- SECTION 2: PRODUCTION (FAOSTAT data) -->
+        <section class="section" id="production">
             <div class="section-top">
-                <span class="number">02 / WHAT MALAYSIA BUYS</span>
+                <span class="number">02 / COFFEE GROWN IN MALAYSIA</span>
                 <span class="section-line"></span>
             </div>
-
+            <h2>Malaysia also <em>grows coffee.</em></h2>
+            <p class="section-intro">Before looking at imports, let's see how much green coffee Malaysia produces.</p>
+            <article class="chart-card full">
+                <span class="tag">CHART 04 · PRODUCTION OVER TIME</span>
+                <h3>Malaysia's coffee production has fallen</h3>
+                <p class="chart-story-intro">How has Malaysia's green coffee production changed since 2020?</p>
+                <div class="vis" id="chart14"></div>
+                <p class="reading-note"><strong>What the data shows: </strong>Production fell from 4,241 tonnes in 2020
+                    to 2,861 tonnes in 2024, a drop of about 33%.</p>
+                <p class="caption">Source: FAOSTAT, Crops and livestock products, Coffee, green, Malaysia, production
+                    quantity, 2020–2024. Production is not the same as imports.</p>
+            </article>
+        </section>
+        <!-- SECTION 3: IMPORTS -->
+        <section class="section section-warm" id="imports">
+            <div class="section-top">
+                <span class="number">03 / WHAT MALAYSIA BUYS</span>
+                <span class="section-line"></span>
+            </div>
             <h2>
                 Our biggest suppliers are <em>close to home.</em>
             </h2>
-
-            <p class="section-intro">
-                Vietnam and Indonesia account for most of Malaysia's
-                reported coffee imports by value. Brazil is the largest
-                partner outside Asia among the selected partners.
-            </p>
-
-
+            <p class="section-intro">Vietnam and Indonesia together account for about 60% of Malaysia's total reported
+                coffee import value in 2024. Brazil is another large partner in the selected records.</p>
+            <p class="story-bridge">The maps show the connections. Now let's compare the values and quantities.</p>
             <div class="two">
-
-                <!-- CHART 4 -->
+                <!-- CHART 5: Import value ranking -->
                 <article class="chart-card">
-
-                    <span class="tag">
-                        CHART 04 · RANKED BAR
-                    </span>
-
-                    <h3>Top import partners</h3>
-
-                    <p>Trade value in thousand US dollars.</p>
-
-                    <div id="chart01" class="vis"></div>
-                    <p class="reading-note">Look for: Compare the top countries by import value.</p>
-
+                    <span class="tag">CHART 05 · RANKED BAR</span>
+                    <h3>Vietnam and Indonesia lead Malaysia's coffee imports</h3>
+                    <p class="chart-story-intro">
+                        Malaysia buys coffee products from many countries.
+                        Which partners have the highest import values?
+                    </p>
+                    <!-- Vega-Lite loads the import ranking chart here. -->
+                    <div class="vis" id="chart01"></div>
+                    <p class="reading-note">
+                        <strong>What the data shows:</strong>
+                        Vietnam and Indonesia have the highest import values
+                        among the partners shown.
+                    </p>
+                    <p class="caption">
+                        Only partners with import values of US$4 million or more are shown.
+                    </p>
+                    <p class="story-next">
+                        But does a higher value also mean more coffee by weight?
+                    </p>
                 </article>
-
-
-                <!-- CHART 5 -->
+                <!-- CHART 6: Import quantity by country -->
                 <article class="chart-card">
-
-                    <span class="tag">
-                        CHART 05 · QUANTITY
-                    </span>
-
-                    <h3>Value is not the same as weight</h3>
-
-                    <p>Compare the physical quantity imported.</p>
-
-                    <div id="chart06" class="vis"></div>
-                    <p class="reading-note">Look for: Compare the amount imported, not just the money spent.</p>
-
-                    <div class="insight">
-                        Vietnam and Indonesia lead in both value
-                        and reported quantity.
-                    </div>
-
+                    <span class="tag">CHART 06 · QUANTITY</span>
+                    <h3>Which countries supply the most coffee by weight?</h3>
+                    <p class="chart-story-intro">
+                        The previous chart compared import values.
+                        Now let's compare how much coffee Malaysia imports in kilograms.
+                    </p>
+                    <!-- Vega-Lite loads the import quantity chart here. -->
+                    <div class="vis" id="chart06"></div>
+                    <p class="reading-note">
+                        <strong>What the data shows:</strong>
+                        This chart compares the weight of coffee imports from each partner shown.
+                        A higher trade value does not always mean a higher quantity.
+                    </p>
+                    <p class="caption">
+                        Only partners with import values of US$4 million or more are shown.
+                        Quantity is measured in kilograms (kg).
+                    </p>
+                    <p class="story-next">
+                        Next, let's compare import value and quantity together.
+                    </p>
                 </article>
-
             </div>
-
-
             <div class="two">
-
-                <!-- CHART 6 -->
+                <!-- CHART 7: Import value compared with quantity -->
                 <article class="chart-card">
-
-                    <span class="tag">
-                        CHART 06 · SCATTERPLOT
-                    </span>
-
-                    <h3>Do larger shipments cost more?</h3>
-
-                    <p>
-                        Each dot is one import partner.
-                        Hover to see the figures.
+                    <span class="tag">CHART 07 · SCATTERPLOT</span>
+                    <h3>Do bigger coffee imports also have higher values?</h3>
+                    <p class="chart-story-intro">
+                        The last two charts compared value and weight separately.
+                        Here, each dot shows one import partner using both measurements.
                     </p>
-
-                    <div id="chart03" class="vis"></div>
-                    <p class="reading-note">Look for: Each dot compares the quantity and value for one partner.</p>
-
+                    <!-- app.js loads 03_import_scatter.json into this chart. -->
+                    <div class="vis" id="chart03"></div>
+                    <p class="reading-note">
+                        <strong>What the data shows:</strong>
+                        Vietnam and Indonesia are near the top for both quantity and value.
+                        Other countries do not all follow the same pattern.
+                    </p>
+                    <!-- This chart includes smaller partners too, unlike Charts 05 and 06. -->
+                    <p class="caption">
+                        Each dot is one import partner in the selected CSV records.
+                        This chart includes partners below US$4 million too.
+                    </p>
+                    <p class="story-next">
+                        Next, let's compare the value of coffee per kilogram.
+                    </p>
                 </article>
-
-
-                <!-- CHART 7 -->
+                <!-- CHART 8: Import value per kilogram -->
                 <article class="chart-card">
-
-                    <span class="tag">
-                        CHART 07 · UNIT VALUE
-                    </span>
-
-                    <h3>
-                        Not all coffee has the same value per kg
-                    </h3>
-
-                    <p>
-                        Trade value divided by reported quantity.
-                        This is <strong>not</strong> a shop price
-                        or a quality score.
+                    <span class="tag">CHART 08 · UNIT VALUE</span>
+                    <h3>Why does the value per kilogram differ?</h3>
+                    <p class="chart-story-intro">
+                        The last chart compared total value and weight.
+                        Now let's look at the reported import value for each kilogram.
                     </p>
-
-                    <div id="chart05" class="vis"></div>
-                    <p class="reading-note">Look for: Higher value per kg does not always mean better quality.</p>
-
+                    <!-- app.js loads 05_unit_value.json into this chart. -->
+                    <div class="vis" id="chart05"></div>
+                    <p class="reading-note">
+                        <strong>What the data shows:</strong>
+                        The value per kilogram is different across import partners.
+                        This does not tell us which coffee is better.
+                    </p>
+                    <!-- Only show partners with at least US$1 million in import value. -->
+                    <p class="caption">
+                        Shows partners with import values of US$1 million or more.
+                        Value per kg is based on reported trade value and weight, not shop prices.
+                    </p>
+                    <p class="story-next">
+                        Next, let's see how import value is shared among the top five partners.
+                    </p>
                 </article>
-
             </div>
-
-
             <div class="two">
-
-                <!-- CHART 8 -->
+                <!-- CHART 9: Share of import value among the five biggest partners -->
                 <article class="chart-card">
-
-                    <span class="tag">
-                        CHART 08 · DONUT
-                    </span>
-
-                    <h3>Who makes up the top five?</h3>
-
-                    <p>
-                        Share of the five largest import partners only,
-                        not share of all imports.
+                    <span class="tag">CHART 09 · DONUT</span>
+                    <h3>Two countries make up most of the top five</h3>
+                    <p class="chart-story-intro">
+                        Vietnam and Indonesia had the highest import values.
+                        How much of the top five do they make up together?
                     </p>
-
-                    <div id="chart10" class="vis"></div>
-                    <p class="reading-note">Try it: Click a country in the legend to highlight its slice.</p>
-
+                    <!-- app.js loads 10_top_partner_share.json here. -->
+                    <div class="vis" id="chart10"></div>
+                    <p class="reading-note">
+                        <strong>What the data shows:</strong>
+                        Vietnam and Indonesia make up about 70% of the import value
+                        among these five partners.
+                    </p>
+                    <!-- This percentage is based on the five countries, not all imports. -->
+                    <p class="caption">
+                        Only the five biggest import partners in the selected CSV are shown.
+                        The percentages are shares of these five partners only.
+                    </p>
+                    <p class="story-next">
+                        Click a country in the legend to highlight its slice.
+                        Click it again to clear the selection.
+                    </p>
                 </article>
-
-
-                <!-- CHART 9 -->
+                <!-- CHART 10: Count import partners by their trade value -->
                 <article class="chart-card">
-
-                    <span class="tag">
-                        CHART 09 · HISTOGRAM
-                    </span>
-
-                    <h3>
-                        Most partners have smaller trade values
-                    </h3>
-
-                    <p>
-                        How many of the listed import partners fall
-                        in each value range?
+                    <span class="tag">CHART 10 · HISTOGRAM</span>
+                    <h3>Most import partners have smaller trade values</h3>
+                    <p class="chart-story-intro">
+                        The last chart showed the top five partners. But what about the others?
+                        This chart groups partners by their import value.
                     </p>
-
-                    <div id="chart09" class="vis"></div>
-                    <p class="reading-note">Look for: See how many partners fall into each value range.</p>
-
+                    <!-- app.js loads the histogram into this chart container. -->
+                    <div class="vis" id="chart09"></div>
+                    <p class="reading-note">
+                        <strong>What the data shows:</strong>
+                        26 of the 31 listed import partners have values below US$10 million.
+                        Only a few partners have much larger values.
+                    </p>
+                    <p class="caption">
+                        Each partner is counted once. Bars show the number of partners in each value range,
+                        not the amount of coffee imported. Only partners in the selected CSV are included.
+                    </p>
+                    <p class="story-next">Next, let's look at where Malaysia exports coffee.</p>
                 </article>
-
             </div>
-
         </section>
-
-
-        <!-- SECTION 3: EXPORTS -->
+        <!-- SECTION 4: EXPORTS -->
         <section class="section" id="exports">
-
             <div class="section-top">
-                <span class="number">03 / WHAT MALAYSIA SELLS</span>
+                <span class="number">04 / WHAT MALAYSIA SELLS</span>
                 <span class="section-line"></span>
             </div>
-
             <h2>
                 Coffee also travels <em>out of Malaysia.</em>
             </h2>
-
             <p class="section-intro">
                 Malaysia exports coffee products too. Singapore was
                 its largest reported export partner in 2024.
@@ -369,116 +341,89 @@
                 should not be treated as local coffee production
                 or consumption.
             </p>
-
-
+            <p class="story-bridge">Malaysia also exports coffee products. Who buys them, and how do exports compare
+                with imports?</p>
             <div class="two">
-
-                <!-- CHART 10 -->
+                <!-- CHART 11: Rank export partners with values of at least US$400,000. -->
                 <article class="chart-card">
-
                     <span class="tag">
-                        CHART 10 · EXPORT RANKING
+                        CHART 11 · EXPORT RANKING
                     </span>
-
-                    <h3>Where does Malaysia export coffee?</h3>
-
-                    <p>
-                        Largest reported export partners by trade value.
-                    </p>
-
-                    <div id="chart02" class="vis"></div>
-                    <p class="reading-note">Look for: Which country receives the highest export value?</p>
-
+                    <!-- Story title: connects this chart with the previous and next part of the dashboard. -->
+                    <h3>Singapore is the largest export partner in this dataset</h3>
+                    <p class="chart-story-intro">We have looked at Malaysia’s coffee imports. Now let’s see which
+                        countries
+                        buy coffee products from Malaysia.</p>
+                    <div class="vis" id="chart02"></div>
+                    <p class="reading-note"><strong>What the data shows: </strong>Singapore has the highest export value
+                        in this dataset, at about US$12.3 million.</p>
+                    <p class="caption">Only export partners with a value of at least US$400,000 are shown.
+                        Values are in US$ thousand. Hover over a bar to see the exact value and quantity.</p>
+                    <p class="story-next">Next, let’s compare export quantity and value.</p>
                 </article>
-
-
-                <!-- CHART 11 -->
-                <article class="chart-card">
-
-                    <span class="tag">
-                        CHART 11 · SCATTERPLOT
-                    </span>
-
-                    <h3>Export value versus quantity</h3>
-
-                    <p>
-                        Each dot represents a reported export partner.
-                    </p>
-
-                    <div id="chart07" class="vis"></div>
-                    <p class="reading-note">Look for: Each dot shows an export partner’s quantity and value.</p>
-
-                </article>
-
-            </div>
-
-
-            <div class="two">
-
                 <!-- CHART 12 -->
                 <article class="chart-card">
-
                     <span class="tag">
-                        CHART 12 · HEATMAP
+                        CHART 12 · SCATTERPLOT
                     </span>
-
-                    <h3>
-                        Some partners appear on both sides
-                    </h3>
-
-                    <p>
-                        Compare import and export values for selected
-                        countries. Darker cells mean higher trade value.
+                    <!-- Story title: connects this chart with the previous and next part of the dashboard. -->
+                    <h3>Exports also differ in value and quantity</h3>
+                    <p class="chart-story-intro">We have seen which countries buy the most coffee products from
+                        Malaysia. Now let’s compare export value and quantity. Each dot is one export partner.</p>
+                    <div class="vis" id="chart07"></div>
+                    <p class="reading-note"><strong>What the data shows: </strong>Singapore has the highest export value
+                        and quantity in this dataset. South Korea has a relatively high export value for its quantity.
                     </p>
-
-                    <div id="chart04" class="vis"></div>
-                    <p class="reading-note">Look for: Compare imports and exports for the same countries.</p>
-
+                    <!-- The scatterplot includes all 20 export partners from the CSV. -->
+                    <p class="chart-caption">All 20 export partners are included. Hover over a dot to see the country,
+                        quantity and export value.</p>
+                    <p class="story-next">Some countries also appear in the import data.</p>
                 </article>
-
-
+            </div>
+            <div class="two">
                 <!-- CHART 13 -->
                 <article class="chart-card">
-
                     <span class="tag">
-                        CHART 13 · COMPARISON
+                        CHART 13 · HEATMAP
                     </span>
-
-                    <h3>
-                        Malaysia imports much more than it exports
-                    </h3>
-
-                    <p>
-                        Totals across the selected partner records.
-                        Use the official overall totals above for
-                        the full comparison.
-                    </p>
-
-                    <div id="chart08" class="vis"></div>
-                    <p class="reading-note">Remember: This chart uses selected records, not national totals.</p>
-
-                    <div class="insight">
-                        Trade flows tell us where coffee products move,
-                        not how much coffee Malaysians drink.
-                    </div>
-
+                    <!-- Story title: connects this chart with the previous and next part of the dashboard. -->
+                    <h3>Some partners appear on both sides of the story</h3>
+                    <p class="chart-story-intro">Some countries both sell coffee products to Malaysia and buy them from
+                        Malaysia. This chart compares their import and export values.</p>
+                    <div class="vis" id="chart04"></div>
+                    <p class="reading-note"><strong>What the data shows: </strong>All 10 countries shown have both
+                        import and export records. Vietnam and Indonesia have much higher import values, while Singapore
+                        has a slightly higher export value than import value.</p>
+                    <p class="chart-caption">Only 10 selected partners are shown. Darker squares show higher value
+                        ranges. The colours group values into five ranges. Hover over a square to see the exact amount.
+                        Values are in US$ thousand.</p>
+                    <p class="story-next">Finally, let's compare the size of the two trade flows.</p>
                 </article>
-
+                <!-- CHART 14: Compare total import and export values from our selected CSV. -->
+                <article class="chart-card">
+                    <span class="tag">CHART 14 · COMPARISON</span>
+                    <h3>Imports are much larger than exports in this dataset</h3>
+                    <p class="chart-story-intro">We have seen where Malaysia buys and sells coffee products. Finally,
+                        let’s compare the total import and export values in our selected records.</p>
+                    <div class="vis" id="chart08"></div>
+                    <p class="reading-note"><strong>What the data shows: </strong>The selected records contain about
+                        US$450.0 million in imports and US$36.6 million in exports. Import value is about 12 times
+                        higher.</p>
+                    <p class="chart-caption">These totals cover 31 import records and 20 export records in our CSV, not
+                        all of Malaysia’s coffee trade. Hover over a bar to see the exact value.</p>
+                    <p class="story-next">Now, let’s bring the coffee trade story together.</p>
+                    <div class="insight">Trade data shows where coffee products move, not how much coffee Malaysians
+                        drink.</div>
+                </article>
             </div>
-
         </section>
-
-
         <!-- CLOSING SECTION -->
         <section class="closing">
-
             <span class="number">THE TAKEAWAY</span>
-
             <h2>
-                A cup of coffee has<br>
+                A cup of coffee has<br />
                 <em>a global story.</em>
             </h2>
-
             <p>
                 Malaysia's coffee trade is strongly connected to nearby
                 countries, especially Vietnam and Indonesia.
@@ -487,25 +432,17 @@
                 are bought and sold. It does not tell us where
                 every bean was grown.
             </p>
-
         </section>
-
-
-        <!-- SECTION 4: SOURCES -->
+        <!-- SECTION 5: SOURCES -->
         <section class="section methods" id="methods">
-
             <div class="section-top">
-                <span class="number">04 / ABOUT THIS PROJECT</span>
+                <span class="number">05 / ABOUT THIS PROJECT</span>
                 <span class="section-line"></span>
             </div>
-
-            <h2>Sources & <em>notes.</em></h2>
-
+            <h2>Sources &amp; <em>notes.</em></h2>
             <div class="two">
-
                 <div>
                     <h3>Where the numbers came from</h3>
-
                     <p>
                         World Bank WITS, using UN Comtrade, 2024.
                         Product HS 0901: coffee whether or not roasted
@@ -514,28 +451,28 @@
                         in thousands of US dollars and quantities
                         in kilograms.
                     </p>
-
-
                     <p>
                         <a href="https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Imports/partner/ALL/product/0901"
-                            target="_blank" rel="noopener">
+                            rel="noopener" target="_blank">
                             Import data
                         </a>
 
-                        &nbsp;
+
 
                         <a href="https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Exports/partner/ALL/product/0901"
-                            target="_blank" rel="noopener">
+                            rel="noopener" target="_blank">
                             Export data
                         </a>
                     </p>
-
+                    <p>
+                        FAOSTAT (FAO), Crops and livestock products, Coffee, green,
+                        Malaysia, production quantity, 2020–2024. Values are in tonnes.
+                        <a href="https://www.fao.org/faostat/en/#data/QCL" rel="noopener" target="_blank">FAOSTAT
+                            data</a>
+                    </p>
                 </div>
-
-
                 <div>
                     <h3>How to read the charts</h3>
-
                     <p>
                         Charts use only published country records
                         transcribed into local CSV files.
@@ -545,7 +482,6 @@
                         The world boundary file is from world-atlas,
                         loaded through a public CDN.
                     </p>
-
                     <p>
                         All charts and maps are made using Vega-Lite.
                         The maps and charts require an internet
@@ -553,27 +489,17 @@
                         world boundaries.
                     </p>
                 </div>
-
             </div>
-
-
             <!-- FOOTER WITH YOUR NAME -->
             <div class="footer">
-
                 <span>COFFEE / DATA STORY</span>
-
                 <span>
                     Created by Lawrence Lee · FIT3179 · October 2026
                 </span>
-
             </div>
-
         </section>
-
     </main>
-
     <script src="js/app.js"></script>
-
 </body>
 
 </html>

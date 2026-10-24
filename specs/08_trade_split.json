@@ -22,22 +22,37 @@
     }
   },
   "width": "container",
-  "height": 240,
+  "height": 280,
   "data": {
     "url": "data/malaysia_coffee_trade_2024.csv"
   },
-  "mark": "bar",
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
   "encoding": {
     "x": {
       "field": "direction",
       "type": "nominal",
-      "title": null
+      "sort": [
+        "Import",
+        "Export"
+      ],
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "labelPadding": 8
+      }
     },
     "y": {
       "aggregate": "sum",
       "field": "trade_value_usd_1000",
       "type": "quantitative",
-      "title": "Listed partners (US$ thousand)"
+      "title": "Total trade value (US$ thousand)",
+      "axis": {
+        "format": ",.0f"
+      }
     },
     "color": {
       "field": "direction",
@@ -48,20 +63,29 @@
           "Export"
         ],
         "range": [
-          "#8a5938",
-          "#2e756f"
+          "#8B5E3C",
+          "#CDA77D"
         ]
       },
       "legend": null
     },
     "tooltip": [
       {
-        "field": "direction"
+        "field": "direction",
+        "type": "nominal",
+        "title": "Trade direction"
       },
       {
         "aggregate": "sum",
         "field": "trade_value_usd_1000",
+        "type": "quantitative",
+        "title": "Total value (US$ thousand)",
         "format": ",.2f"
+      },
+      {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Number of partner records"
       }
     ]
   }

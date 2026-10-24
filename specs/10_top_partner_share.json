@@ -1,48 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "transparent",
-  "config": {
-    "view": {
-      "stroke": null
-    },
-    "axis": {
-      "labelColor": "#5b554d",
-      "titleColor": "#5b554d",
-      "gridColor": "#eae3d9",
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelFontSize": 11,
-      "titleFontSize": 11
-    },
-    "legend": {
-      "labelFont": "Arial",
-      "titleFont": "Arial",
-      "labelColor": "#5b554d",
-      "titleColor": "#5b554d"
-    }
-  },
   "width": "container",
-  "height": 330,
+  "height": 320,
   "data": {
     "url": "data/malaysia_coffee_trade_2024.csv"
   },
-  "mark": {
-    "type": "arc",
-    "innerRadius": 80,
-    "outerRadius": 125
-  },
-  "params": [
-    {
-      "name": "partner_highlight",
-      "select": {
-        "type": "point",
-        "fields": [
-          "country"
-        ]
-      },
-      "bind": "legend"
-    }
-  ],
   "transform": [
     {
       "filter": "datum.direction === 'Import'"
@@ -58,30 +21,79 @@
           "Singapore"
         ]
       }
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "trade_value_usd_1000",
+          "as": "top_five_total"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.trade_value_usd_1000 / datum.top_five_total",
+      "as": "share"
     }
   ],
+  "params": [
+    {
+      "name": "choose_country",
+      "select": {
+        "type": "point",
+        "fields": [
+          "country"
+        ]
+      },
+      "bind": "legend"
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 85,
+    "outerRadius": 140,
+    "stroke": "white",
+    "strokeWidth": 2
+  },
   "encoding": {
     "theta": {
       "field": "trade_value_usd_1000",
-      "type": "quantitative"
+      "type": "quantitative",
+      "stack": true
     },
     "color": {
       "field": "country",
       "type": "nominal",
       "scale": {
-        "scheme": "browns"
+        "domain": [
+          "Vietnam",
+          "Indonesia",
+          "Brazil",
+          "Colombia",
+          "Singapore"
+        ],
+        "range": [
+          "#a95e45",
+          "#d69a4b",
+          "#397c79",
+          "#7667a0",
+          "#D9799A"
+        ]
       },
       "legend": {
+        "title": "Import partner",
         "orient": "bottom",
-        "columns": 3
+        "columns": 3,
+        "labelFontSize": 12,
+        "symbolSize": 150
       }
     },
     "opacity": {
       "condition": {
-        "param": "partner_highlight",
+        "param": "choose_country",
         "value": 1
       },
-      "value": 0.2
+      "value": 0.25
     },
     "tooltip": [
       {
@@ -94,7 +106,24 @@
         "type": "quantitative",
         "title": "Import value (US$ thousand)",
         "format": ",.2f"
+      },
+      {
+        "field": "share",
+        "type": "quantitative",
+        "title": "Share of top five",
+        "format": ".1%"
       }
     ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "labelColor": "#5b554d",
+      "titleColor": "#5b554d"
+    }
   }
 }

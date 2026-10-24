@@ -41,15 +41,22 @@
     "x": {
       "field": "quantity_kg",
       "type": "quantitative",
-      "title": "Quantity (kg)"
+      "title": "Import quantity (kg)"
     },
     "tooltip": [
       {
-        "field": "country"
+        "field": "country",
+        "title": "Country"
       },
       {
         "field": "quantity_kg",
+        "title": "Quantity (kg)",
         "format": ","
+      },
+      {
+        "field": "trade_value_usd_1000",
+        "title": "Import value (US$ thousand)",
+        "format": ",.2f"
       }
     ]
   },
@@ -58,7 +65,7 @@
       "filter": "datum.direction === 'Import'"
     },
     {
-      "filter": "datum.trade_value_usd_1000 >= 6000"
+      "filter": "datum.trade_value_usd_1000 >= 4000"
     }
   ]
 }

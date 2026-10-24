@@ -36,23 +36,29 @@
     "x": {
       "field": "quantity_kg",
       "type": "quantitative",
-      "title": "Imported quantity (kg)"
+      "title": "Import quantity (kg)"
     },
     "y": {
       "field": "trade_value_usd_1000",
       "type": "quantitative",
-      "title": "Trade value (US$ thousand)"
+      "title": "Import value (US$ thousand)"
     },
     "tooltip": [
       {
-        "field": "country"
+        "field": "country",
+        "type": "nominal",
+        "title": "Country"
       },
       {
         "field": "quantity_kg",
+        "type": "quantitative",
+        "title": "Quantity (kg)",
         "format": ","
       },
       {
         "field": "trade_value_usd_1000",
+        "type": "quantitative",
+        "title": "Value (US$ thousand)",
         "format": ",.2f"
       }
     ]

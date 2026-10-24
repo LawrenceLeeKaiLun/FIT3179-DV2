@@ -26,7 +26,7 @@
     "type": "equalEarth"
   },
   "width": "container",
-  "height": 330,
+  "height": 390,
   "layer": [
     {
       "data": {
@@ -45,7 +45,7 @@
     },
     {
       "data": {
-        "url": "data/import_flow_curved_2024.csv"
+        "url": "data/import_flow_more_curved_2024.csv"
       },
       "transform": [
         {
@@ -64,8 +64,8 @@
       "mark": {
         "type": "line",
         "color": "#b7c1bb",
-        "opacity": 0.48,
-        "strokeWidth": 1.0
+        "opacity": 0.42,
+        "strokeWidth": 0.9
       },
       "encoding": {
         "longitude": {
@@ -101,7 +101,7 @@
     },
     {
       "data": {
-        "url": "data/import_flow_curved_2024.csv"
+        "url": "data/import_flow_more_curved_2024.csv"
       },
       "transform": [
         {
@@ -119,7 +119,7 @@
       ],
       "mark": {
         "type": "line",
-        "opacity": 0.83,
+        "opacity": 0.96,
         "strokeCap": "round"
       },
       "encoding": {
@@ -155,15 +155,20 @@
               "#d38a36",
               "#2c7774",
               "#6e6097",
-              "#498e57"
+              "#FFD400"
             ]
           },
           "legend": {
             "title": "Top five import partners",
             "orient": "bottom",
             "columns": 5,
-            "labelFontSize": 10,
-            "symbolType": "stroke"
+            "labelFontSize": 14,
+            "symbolType": "stroke",
+            "titleFontSize": 15,
+            "symbolStrokeWidth": 5,
+            "symbolSize": 350,
+            "columnPadding": 22,
+            "rowPadding": 10
           }
         },
         "strokeWidth": {
@@ -177,7 +182,7 @@
             ],
             "range": [
               1.3,
-              3.5
+              2.3
             ]
           },
           "legend": null

@@ -22,7 +22,7 @@
     }
   },
   "width": "container",
-  "height": 390,
+  "height": 480,
   "data": {
     "url": "data/malaysia_coffee_trade_2024.csv"
   },
@@ -36,21 +36,37 @@
     "x": {
       "field": "unit_value_usd_per_kg",
       "type": "quantitative",
-      "title": "Reported trade value per kg (US$)"
+      "title": "Import value per kg (US$)"
     },
     "y": {
       "field": "country",
       "type": "nominal",
-      "sort": "-x",
+      "sort": {
+        "field": "unit_value_usd_per_kg",
+        "op": "max",
+        "order": "descending"
+      },
       "title": null
     },
     "tooltip": [
       {
-        "field": "country"
+        "field": "country",
+        "title": "Country"
       },
       {
         "field": "unit_value_usd_per_kg",
+        "title": "Value per kg (US$)",
         "format": ".2f"
+      },
+      {
+        "field": "quantity_kg",
+        "title": "Quantity (kg)",
+        "format": ","
+      },
+      {
+        "field": "trade_value_usd_1000",
+        "title": "Import value (US$ thousand)",
+        "format": ",.2f"
       }
     ]
   },

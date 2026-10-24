@@ -77,16 +77,20 @@
           "scale": {
             "scheme": "browns"
           },
-          "title": "US$ thousand"
+          "title": "Import value (US$ thousand)",
+          "legend": {
+            "format": ",.0f",
+            "gradientLength": 230
+          }
         },
         "tooltip": [
           {
             "field": "country",
-            "title": "Partner"
+            "title": "Import partner"
           },
           {
             "field": "value",
-            "title": "US$ thousand",
+            "title": "Import value (US$ thousand)",
             "format": ",.2f"
           }
         ]

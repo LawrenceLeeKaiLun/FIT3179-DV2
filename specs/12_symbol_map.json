@@ -25,7 +25,7 @@
     "type": "equalEarth"
   },
   "width": "container",
-  "height": 340,
+  "height": 380,
   "layer": [
     {
       "data": {
@@ -54,9 +54,9 @@
       "mark": {
         "type": "circle",
         "color": "#8a5938",
-        "opacity": 0.73,
-        "stroke": "white",
-        "strokeWidth": 0.6
+        "opacity": 0.78,
+        "stroke": "#fffaf2",
+        "strokeWidth": 1.1
       },
       "encoding": {
         "longitude": {
@@ -72,20 +72,34 @@
           "type": "quantitative",
           "scale": {
             "range": [
-              18,
-              1500
+              30,
+              800
             ]
           },
           "legend": {
-            "title": "US$ thousand"
+            "title": "Import value (US$ thousand)",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "values": [
+              20000,
+              60000,
+              100000
+            ],
+            "format": ",.0f",
+            "symbolStrokeColor": "#8a5938",
+            "symbolFillColor": "#8a5938"
           }
         },
         "tooltip": [
           {
-            "field": "country"
+            "field": "country",
+            "type": "nominal",
+            "title": "Import partner"
           },
           {
             "field": "trade_value_usd_1000",
+            "type": "quantitative",
+            "title": "Import value (US$ thousand)",
             "format": ",.2f"
           }
         ]

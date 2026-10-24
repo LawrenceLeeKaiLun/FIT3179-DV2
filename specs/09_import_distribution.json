@@ -26,7 +26,10 @@
   "data": {
     "url": "data/malaysia_coffee_trade_2024.csv"
   },
-  "mark": "bar",
+  "mark": {
+    "type": "bar",
+    "color": "#8a5938"
+  },
   "encoding": {
     "x": {
       "bin": {
@@ -34,17 +37,26 @@
       },
       "field": "trade_value_usd_1000",
       "type": "quantitative",
-      "title": "Import partner value (US$ thousand)"
+      "title": "Import value per partner (US$ thousand)"
     },
     "y": {
       "aggregate": "count",
       "type": "quantitative",
-      "title": "Number of listed partners"
+      "title": "Number of import partners"
     },
     "tooltip": [
       {
+        "field": "trade_value_usd_1000",
+        "bin": {
+          "maxbins": 12
+        },
+        "type": "quantitative",
+        "title": "Import value range (US$ thousand)"
+      },
+      {
         "aggregate": "count",
-        "type": "quantitative"
+        "type": "quantitative",
+        "title": "Number of partners"
       }
     ]
   },

@@ -22,40 +22,90 @@
     }
   },
   "width": "container",
-  "height": 290,
+  "height": 360,
   "data": {
     "url": "data/malaysia_coffee_trade_2024.csv"
   },
-  "mark": "rect",
+  "mark": {
+    "type": "rect",
+    "stroke": "#ffffff",
+    "strokeWidth": 1
+  },
   "encoding": {
     "x": {
       "field": "direction",
       "type": "nominal",
-      "title": null
+      "sort": [
+        "Import",
+        "Export"
+      ],
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "labelPadding": 10,
+        "ticks": false
+      }
     },
     "y": {
       "field": "country",
       "type": "nominal",
-      "sort": "-color",
+      "sort": [
+        "Vietnam",
+        "Indonesia",
+        "Brazil",
+        "Colombia",
+        "Singapore",
+        "India",
+        "China",
+        "Australia",
+        "South Korea",
+        "Thailand"
+      ],
       "title": null
     },
     "color": {
       "field": "trade_value_usd_1000",
       "type": "quantitative",
       "scale": {
-        "scheme": "browns"
+        "type": "threshold",
+        "domain": [
+          1000,
+          5000,
+          20000,
+          80000
+        ],
+        "range": [
+          "#f3e9dc",
+          "#e1c5a1",
+          "#c99768",
+          "#a76546",
+          "#783d35"
+        ]
       },
-      "title": "US$ thousand"
+      "title": "Trade value (US$ thousand)",
+      "legend": {
+        "title": "Trade value (US$ thousand)",
+        "orient": "bottom",
+        "direction": "horizontal",
+        "gradientLength": 400
+      }
     },
     "tooltip": [
       {
-        "field": "country"
+        "field": "country",
+        "type": "nominal",
+        "title": "Partner"
       },
       {
-        "field": "direction"
+        "field": "direction",
+        "type": "nominal",
+        "title": "Trade direction"
       },
       {
         "field": "trade_value_usd_1000",
+        "type": "quantitative",
+        "title": "Trade value (US$ thousand)",
         "format": ",.2f"
       }
     ]
