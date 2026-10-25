@@ -1,40 +1,99 @@
 # Coffee — From the World to Our Cup
 
-FIT3179 Data Visualisation 2, October 2026. Open `index.html` using VS Code Live Server.
+FIT3179 Data Visualisation 2  
+Lawrence Lee  
+October 2026
 
-## Current project status
+## About my dashboard
 
-**Presentation prototype, NOT final HD-compliant assignment.** Contains 13 Vega-Lite charts, including three distinct map idioms: choropleth, proportional symbols and straight-line trade flow. Uses one statistical source (WITS/UN Comtrade), so the requirement for **two different data sources is not yet satisfied**. Several idioms are basic, so the requirement for **eight advanced idioms is not yet satisfied**. Tutor-approved hand-drawn sketch, What/Why/How documentation, authorship, AI acknowledgement and interview prep also require student review.
+My dashboard is about Malaysia's coffee trade in 2024. It shows where Malaysia imports coffee from, where Malaysia exports coffee to, and how Malaysia's local coffee production has changed.
 
-## Source and definitions
+I created this dashboard to help people understand where our coffee comes from and how Malaysia trades coffee with other countries.
 
-World Bank WITS / UN Comtrade, Malaysia, 2024, HS 0901 (coffee whether or not roasted or decaffeinated; husks and skins; coffee substitutes containing coffee in any proportion):
+The dashboard has 14 charts, including three different maps. I used short explanations and interactive charts to make the information easier to understand.
 
-- Imports: https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Imports/partner/ALL/product/0901
-- Exports: https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Exports/partner/ALL/product/0901
+## View my dashboard
 
-Data in `data/malaysia_coffee_trade_2024.csv` was manually transcribed from these official WITS country tables (selected leading partners only). Values are **thousand USD**; quantities are **kg**. Unit value = reported USD / reported kg. Unit values are **not retail prices**, coffee quality measures, or comparable unit prices for a uniform product. Source partner country does **not** necessarily mean country of cultivation. Maps use approximate country reference points, **not exact ports or routes**. The official world totals (imports US$452,010.30 thousand, exports US$38,877.57 thousand) are not sums of our truncated CSV. The 60.5% figure = (138511.59+134779.53)/452010.30 *100.
+GitHub Pages:  
+https://lawrenceleekailun.github.io/FIT3179-DV2/
 
-World boundaries loaded from `world-atlas@2` countries-110m via jsDelivr. Vega-Lite and Vega-Embed loaded from jsDelivr. Internet access is needed.
+You can also open `index.html` using Live Server in Visual Studio Code.
 
-## Remaining steps before assignment submission
+An internet connection is needed because the project uses online libraries and map data.
 
-1. Add at least one independent verified coffee dataset (FAOSTAT or ICO) with year, unit, and metadata checks.
-2. Replace redundant/basic charts with meaningful advanced idioms supported by lecture notes and the new data.
-3. Validate chart rendering in the student's browser and inspect any errors.
-4. Match tutor-approved A4 hand-drawn sketch. Include its scanned PDF in GitHub.
-5. Add student's name, source/asset credits, AI acknowledgement, What/Why/How explanation.
-6. Publish on GitHub Pages and test public URL on laptop, then practise interview.
+## Data sources
 
-No invented production/consumption values are included.
+**1. World Bank WITS / UN Comtrade**
 
-## Folder guide
+I used Malaysia's 2024 coffee import and export data (HS 0901).
 
-- `index.html`: dashboard webpage
-- `css/style.css`: colours, spacing and layout
-- `js/app.js`: loads each chart with Vega-Embed
-- `specs/`: one readable Vega-Lite JSON file per chart
-- `data/`: coffee CSV files used by the charts
-- `sketch/`: put your original hand-drawn sketch here
+Imports:  
+https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Imports/partner/ALL/product/0901
 
-This reorganised version keeps the original prototype charts and figures; reorganising folders does not validate their accuracy or make the project HD-compliant.
+Exports:  
+https://wits.worldbank.org/trade/comtrade/en/country/MYS/year/2024/tradeflow/Exports/partner/ALL/product/0901
+
+The trade data includes partner countries, trade values and quantities.
+
+- Trade values are in thousands of US dollars.
+- Trade quantities are in kilograms.
+- The CSV contains selected trading partners, so its totals may be different from the full totals reported by WITS.
+
+**2. FAOSTAT**
+
+I used FAOSTAT data from the Food and Agriculture Organization of the United Nations (FAO) to show Malaysia's green coffee production from 2020 to 2024.
+
+Website:  
+https://www.fao.org/faostat/en/#data/QCL
+
+Production is measured in tonnes.
+
+## Charts and maps
+
+I used Vega-Lite to create the charts and maps.
+
+The dashboard is divided into four main sections:
+
+1. World — Shows Malaysia's coffee trading partners using three different maps.
+2. Production — Shows how Malaysia's green coffee production changed from 2020 to 2024.
+3. Imports — Compares coffee import values, quantities and trading partners.
+4. Exports — Compares coffee exports and shows the difference between imports and exports.
+
+Some charts have tooltips so readers can hover to see more information. The donut chart also has a clickable legend.
+
+The map lines show connections between countries. They do not show actual shipping routes.
+
+## Project files
+
+- `index.html` — Main dashboard page
+- `css/style.css` — Dashboard colours and layout
+- `js/app.js` — Loads the Vega-Lite charts
+- `specs/` — Vega-Lite chart specifications
+- `data/` — CSV datasets used in the charts
+- `sketch/` — My hand-drawn dashboard sketch
+
+## Tools used
+
+- HTML
+- CSS
+- JavaScript
+- Vega-Lite
+- Vega-Embed
+- Visual Studio Code
+- GitHub Pages
+
+Map boundaries are from world-atlas, loaded through jsDelivr.
+
+## Notes about the data
+
+The coffee trade data covers HS 0901, which includes different types of coffee products. The unit values shown in the charts are calculated from trade value and quantity. They are not retail coffee prices.
+
+The country listed as a trading partner does not always mean the coffee was grown there.
+
+The dashboard uses selected trading partners for some charts, so these results should not be treated as the full list of countries.
+
+## Sketch
+
+My original hand-drawn sketch is available here:
+
+https://github.com/LawrenceLeeKaiLun/FIT3179-DV2/blob/main/sketch/FIT3179_DV2_Sketch.pdf
